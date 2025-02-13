@@ -1,0 +1,384 @@
+/* Tar bort standardmarginaler och padding från alla element och ser till att bredd och höjd inkluderar padding och border */
+* {
+    margin: 0; /* Tar bort standardmarginal */
+    padding: 0; /* Tar bort standardpadding */
+    box-sizing: border-box; /* Gör så att padding och border inkluderas i elementets totala bredd/höjd */
+}
+
+/* BODY-STYLING */
+body {
+    background-image: url(/bilder/mount\ Fuji.jpg); /* Sätter en bakgrundsbild */
+    background-size: cover; /* Gör så att bilden täcker hela skärmen */
+    background-position: center; /* Centrerar bakgrundsbilden */
+    background-repeat: no-repeat; /* Förhindrar att bakgrundsbilden upprepas */
+    background-attachment: fixed; /* Gör så att bakgrunden inte rör sig vid scroll */
+    display: flex; /* Använder flexbox för att arrangera innehållet */
+    flex-direction: column; /* Lägger elementen i en kolumn */
+    min-height: 100vh; /* Gör så att sidan minst fyller hela skärmens höjd */
+    font-family: Arial, sans-serif; /* Sätter typsnittet */
+    margin: 0; /* Tar bort standardmarginaler */
+    padding: 0; /* Tar bort standardpadding */
+    line-height: 1.6; /* Sätter radavstånd för läsbarhet */
+}
+
+
+
+
+/* HEADER-STYLING */
+header {
+    background: transparent; /* Sätter en mörkblå bakgrundsfärg */   
+    width: 100%; /* Gör så att headern täcker hela sidbredden */
+
+}
+
+/* FLEXBOX-KONTROLL PÅ HEADERN */
+.inner-width {
+    display: flex; /* Använder flexbox för att arrangera innehållet */
+    width: 100%; /* Ser till att den fyller hela bredden */
+    align-items: center; /* Centrerar innehållet vertikalt */
+}
+
+/* LÄNKSTYLING */
+a {
+    color: rgb(255, 255, 255); /* Sätter länkarna till vit färg */
+    text-decoration: none; /* Tar bort understrykning på länkar */
+    cursor: pointer; /* Ändrar muspekaren till en hand vid hover */
+}
+
+/* NAVIGATIONSMENY */
+.navigation-menu {
+    display: flex; /* Använder flexbox för att placera länkar i en rad */
+    flex-direction: row; /* Riktar menyn horisontellt */
+    margin-left: auto; /* Flyttar menyn till höger */
+    margin-right: 2rem; /* Ger lite extra marginal till höger */
+    padding: 1%; /* Lägger till lite utrymme runt menyn */
+}
+
+/* LOGO */
+.logo {
+    padding-left: 10%; /* Lägger till lite mellanrum till vänster */
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px; /* Sätter storleken på texten */
+}
+
+.dark-mode {
+    background-image: url("/bilder/Fuji\ night.jpg");
+}
+
+/* NAVIGATIONSLÄNKAR */
+.navigation-menu a {
+    font-family: 'Cormorant Garamond', serif;
+    display: block; /* Gör länkarna till block för enkel placering */
+    margin-left: 30px; /* Lägger mellanrum mellan länkarna */
+    font-size: 1rem; /* Sätter fontstorlek */
+}
+
+/* MENYKNAPP (DOLT I DESKTOP-LÄGE) */
+.menu-toggle-btn {
+    visibility: hidden;
+    color: white; /* Döljer menyknappen */
+}
+
+/* NAVIGATION HOVER-EFFEKT */
+nav a:hover {
+    scale: 1.2; /* Förstorar texten när musen hovrar */
+    color: aquamarine; /* Ändrar färgen till aquamarine vid hover */
+}
+
+.theme-toggle-btn {
+    color: rgb(255, 255, 255);
+}
+
+/* HUVUDINNEHÅLL */
+.main {
+    display: flex; /* Använder flexbox */
+    flex-direction: column; /* Staplar elementen vertikalt */
+    margin: 80px 10% 30px 10%; /* Lägger till marginaler för att skapa luft runt innehållet */
+}
+
+/* LAYOUT-KONTROLL FÖR FÖRSTA KONTAINERN */
+.container1 {
+    display: flex; /* Använder flexbox för att ordna innehållet */
+    gap: 1rem; /* Skapar mellanrum mellan elementen */
+    width: 100%; /* Fyller hela bredden */
+    margin-bottom: 2rem; /* Skapar utrymme nedanför */
+}
+
+/* BILDER */
+img {
+    width: 100%; /* Gör bilder responsiva */
+    height: 100%; /* Tvingar bilder att alltid fylla sin behållare */
+    object-fit: cover; /* Ser till att bilderna inte blir förvrängda */
+}
+
+/* BILD 1 */
+.img1 {
+    flex: 1; /* Ger bilden en flexibel storlek */
+    display: flex; /* Använder flexbox */
+    height: 400px; /* Sätter en fast höjd */
+    overflow: hidden; /* Förhindrar att innehåll går utanför rutan */
+    filter: sepia(80%) hue-rotate(7000deg);
+}
+
+/* PROJEKTTITEL */
+.project-title {
+    color: white; /* Sätter textfärgen till vit */
+    padding-bottom: 12px; /* Ger lite mellanrum under texten */
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px; /* Sätter fontstorleken */
+}
+
+/* CV-SEKTION */
+.Cv {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: larger; /* Gör texten större */
+    text-align: center; /* Centrerar texten */
+    color: rgb(255, 255, 255); 
+    display: flex; /* Använder flexbox */
+    flex: 2; /* Ger CV-sektionen en större yta än andra element */
+    justify-content: center; /* Centrerar innehållet horisontellt */
+    height: 400px; /* Sätter en fast höjd */
+    background-color: transparent; /* Gör bakgrunden genomskinlig */
+    font-family: Georgia, Times, serif; /* Sätter typsnitt */
+    overflow: auto; /* Lägger till en scrollbar om innehållet blir för stort */
+}
+
+
+
+/* KONTAINER 2 */
+.container2 {
+    display: grid; /* Använder CSS Grid för layout */
+    grid-template-columns: repeat(4, 1fr); /* Skapar fyra lika stora kolumner */
+    gap: 1rem; /* Skapar mellanrum mellan elementen */
+    width: 100%; /* Fyller hela bredden */
+    height: 300px; /* Sätter en fast höjd */
+    margin-bottom: 10%; /* Skapar utrymme längst ner */
+}
+
+/* PROJEKTKORT */
+.project {
+    text-align: center; /* Centrerar texten */
+    border-radius: 5px; /* Ger rundade hörn */
+    display: flex; /* Använder flexbox */
+    justify-content: center; /* Centrerar innehållet */
+    align-items: center; /* Centrerar innehållet vertikalt */
+    height: 100%; /* Fyller hela höjden */
+}
+
+/* PROJEKTBILDER */
+.project img {
+    width: 100%; /* Gör bilderna responsiva */
+    height: 100%; /* Ser till att bilder fyller behållaren */
+    object-fit: cover; /* Ser till att bilder inte blir förvrängda */
+    opacity: 0.4; /* Gör bilderna delvis genomskinliga */
+    border-radius: 15px;
+    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.508);
+    }
+
+/* PROJEKTTITEL */
+.project h2 {
+    background-color: rgba(0, 0, 50, 0.611); /* Sätter en mörk bakgrundsfärg */
+}
+
+/* HOVER-EFFEKT FÖR PROJEKT */
+.project:hover {
+    scale: 1.02; /* Förstorar projektboxen något vid hover */
+}
+
+/* HOVER PÅ BILDER */
+.project h2, img:hover {
+    opacity: 1; /* Gör texten och bilderna helt synliga vid hover */
+}
+
+/* FOOTER */
+.footer {
+    text-align: center; /* Centrerar texten */
+    position: fixed; /* Fixerar footern längst ner på skärmen */
+    bottom: 0; /* Sätter den längst ner */
+    left: 0; /* Justerar den till vänster */
+    width: 100%; /* Låter den täcka hela sidans bredd */
+    height: 30px; /* Sätter en fast höjd */
+    background-color: rgba(0, 4, 24, 0.685); /* Halvtransparent mörk bakgrund */
+}
+
+
+
+/*---------------------------About-page styling-----------------------------------------*/
+
+
+
+.aboutBody {
+    display: flex; /* Gör så att allting i aboutBody blir ett flex-kontainer */
+    flex-direction: column; /* Gör så att elementen i aboutBody placeras vertikalt (uppifrån och ner) */
+    min-height: 100vh;   /* Gör så att aboutBody alltid täcker hela höjden på skärmen */
+    font-family: Arial, sans-serif; /* Bestämmer vilken font som används i aboutBody */
+    margin: 0; /* Tar bort standardmarginaler som webbläsaren lägger till */
+    padding: 0; /* Tar bort standardpadding från body */
+    line-height: 1.6;   /* Gör texten lättläst genom att öka radavståndet */
+    background-color:black; /* Lägger till en bakgrundsbild för aboutBody */
+}
+
+
+.container3 {
+    display: grid; /* Gör container3 till en grid-layout */
+    grid-template-columns: 1fr 1fr; /* Gör två lika stora kolumner i griden */
+    width: 100%; /* Ser till att container3 täcker hela bredden på sidan */
+    height: 400px; /* Bestämmer höjden på container3 */
+    margin-top:6%; /* Ger ett litet mellanrum över container3 */
+}
+
+/* För att visa en bild i container3 */
+.img-section {
+    display: flex; /* Gör så att bilder i img-section placeras på rad */
+    overflow: hidden; /* Dölj överflödiga delar av bilder som är för stora */
+    height: 100%; /* Gör så att bilden fyller hela cellen i container3 */
+}
+
+/* Gör så att bilder i img-section anpassas till container */
+.img-section img {
+    width: 100%; /* Gör så att bilden täcker hela bredden av img-section */
+    height: 100%; /* Gör så att bilden täcker hela höjden på img-section */
+    object-fit:cover; /* Gör så att bilden täcker hela utrymmet utan att bli förvrängd */
+}
+
+/* Content section är för textinnehåll */
+.content-section {
+    margin: auto;
+    font-family: 'Cormorant Garamond', serif;
+    text-align:center; /* Gör så att texten i content-section är centrerad */
+    display: flex; /* Gör content-section till ett flex-container */
+    align-items: center; /* Centrerar texten vertikalt i content-section */
+    background-color: white; /* Ger content-section en vit bakgrund */
+    height: 100%; /* Gör så att content-section fyller hela höjden på sin cell */
+    background-color: transparent; /* Gör bakgrunden transparent */
+    backdrop-filter: blur(3px); /* Lägger till en oskarp bakgrundseffekt */
+    box-shadow: 0px 0px 3px 0.1px rgba(0, 0, 0, 0.508); /* Lägger till en svag skugga runt content-section */
+}
+
+/* Stil för artikelrubriken */
+article h2 {
+    font-size: 28px; /* Gör rubrikens text större */
+    margin-bottom: 10px; /* Lägger till lite utrymme under rubriken */
+    color: rgb(255, 255, 255); /* Sätter textfärgen till vit */
+    text-align: center; /* Centrerar rubriken horisontellt */
+}
+
+/* Stil för artikelns brödtext */
+article p {
+    margin-bottom: 15px; /* Lägger till mellanrum under varje paragraf */
+    color: rgb(255, 255, 255); /* Sätter textfärgen till vit */
+    font-size: 16px; /* Sätter textstorleken för paragrafen */
+}
+
+/*----------------------------------- Contact-page styling--------------------------------------*/
+
+
+.contactBody{
+    text-align: center; /* Centrerar texten i hela contactBody */
+    background-color:black; /* Lägger till en bakgrundsbild för contactBody */
+}
+
+.contact-box {
+    font-family: 'Cormorant Garamond', serif;
+    margin-top: 15%; /* Lägger till utrymme ovanför contact-box */
+    color:white; /* Gör texten i contact-box vit */
+}
+
+iframe {
+    padding-bottom: 5%;
+    width: 40%;
+    height: 20rem;
+
+}
+
+
+/*----------------------------------- Responsive part--------------------------------------*/
+
+@media (max-width: 768px) {
+
+
+    .navigation-menu {
+        flex-direction: column;
+        position: absolute;
+        top: 30px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(77, 110, 147, 0.888);
+        padding: 13px;
+    }
+
+    .navigation-menu a {
+        margin-top: 10px;
+    }
+
+    .menu-toggle-btn {
+        margin-left: auto;
+        z-index: 10;
+        visibility: visible;
+        font-size: 2rem;
+        padding-right: 50px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    nav a:hover {
+        scale: 1;
+        color:aquamarine;
+    }
+
+
+    .container1 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container2 {
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        
+    } 
+
+
+
+
+
+    /* About-part*/
+
+    .container3 {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: auto !important;
+        width: 100% !important;
+    }
+
+    .img-section, 
+    .content-section {
+        width: 100% !important;
+        height: auto !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .img-section img {
+        width: 100% !important;
+        height: auto !important;
+    }
+    /*Contact-part*/
+
+
+
+
+
+}
+
+
+
+
+
+
+
